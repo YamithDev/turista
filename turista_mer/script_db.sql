@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `turista_db`.`orders` (
   `total` DECIMAL(10,2) NULL,
   `users_id_user` VARCHAR(36) NOT NULL,
   `shopping_cart_id_shopping` VARCHAR(36) NOT NULL,
-  `status` VARCHAR(45) GENERATED  AS ("pending") VIRTUAL,
+  `status` VARCHAR(45)  DEFAULT "Pending",
   PRIMARY KEY (`id_order`, `users_id_user`, `shopping_cart_id_shopping`),
   INDEX `fk_payment_method_idx` (`id_payment_method` ASC) ,
   INDEX `fk_orders_users1_idx` (`users_id_user` ASC) ,
